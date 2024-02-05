@@ -1,4 +1,13 @@
+import 'dart:io';
+
 void main() {
+  String val = "Abdul khader";
+  String newVal = val.split('').reversed.join('');
+  print(newVal);
+  String val2 = "    Arun Kumar";
+  for (int i = val2.length - 1; i >= 0; i--) {
+    stdout.write(val2[i]);
+  }
   String name = "Hello     world    how are    you";
   List<String> newName = [];
   bool findSpace = false;
