@@ -3,9 +3,6 @@ class Node {
   Node? next;
 
   Node(this.data);
-//Node(int data) {
-//this.data = data;
-//}
 }
 
 class SLinkedList {
@@ -35,26 +32,13 @@ class SLinkedList {
       temp = temp.next;
     }
   }
-
-  LinkedtoList(List<int> arr) {
-    Node? temp = head;
-    while (temp != null) {
-      arr.add(temp.data);
-      temp = temp.next;
-    }
-  }
 }
 
 void main() {
+  List<int> arr = [10, 20, 30, 30, 40, 50];
   SLinkedList list = SLinkedList();
-  List<int> arr = [];
+  for (int i = 0; i < arr.length; i++) {
+    list.addNode(arr[i]);
+  }
   list.display();
-
-  list.addNode(10);
-  list.addNode(20);
-  list.addNode(50);
-
-  list.display();
-  list.LinkedtoList(arr);
-  print(arr);
 }
