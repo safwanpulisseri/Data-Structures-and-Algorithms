@@ -25,44 +25,28 @@ class LinkedList {
     if (head == null) {
       print("empty");
     } else {
-      Node? temp = head;
+      Node? temp = tail;
       while (temp != null) {
         print(temp.data);
-        temp = temp.next;
+        temp = temp.prev;
       }
     }
   }
 
-  insertAt(int findNext, int data) {
+  void insertAt(int findNext, int data) {
     Node newNode = Node(data);
-    if (head?.data == findNext) {
-      if (head == tail) {
-        head?.next = newNode;
-        newNode.prev = head;
-        tail = newNode;
-      } else {
-        newNode.next = head?.next;
-        newNode.prev = head;
-        head?.next = newNode;
-      }
-    } else {
-      Node? temp;
-      temp = head;
-      while (temp != null && temp.data != findNext) {
-        temp = temp.next;
-      }
-      if (temp == null) {
-        print("value not found");
-      }
-      if (temp == tail) {
-        tail?.next = temp;
-        temp?.prev = tail;
-        tail = temp;
-      }
-      newNode.prev = temp;
-      newNode.next = temp?.next;
-      temp?.next = newNode;
+    Node? temp = head;
+    while (temp != null && temp.data != findNext) {
+      temp = temp.next;
     }
+    newNode.prev = temp;
+    newNode.next = temp?.next;
+    if (temp == tail) {
+      tail = newNode;
+    } else {
+      temp?.next?.prev = newNode;
+    }
+    temp?.next = newNode;
   }
 }
 
@@ -76,6 +60,6 @@ main() {
   list.addNode(40);
   list.addNode(50);
   list.addNode(60);
-  list.insertAt(30, 35);
+  list.insertAt(60, 0);
   list.display();
 }

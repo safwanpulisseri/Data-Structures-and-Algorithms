@@ -35,19 +35,10 @@ class SLinkedList {
       temp = temp.next;
     }
   }
-
-  LinkedtoList(List<int> arr) {
-    Node? temp = head;
-    while (temp != null) {
-      arr.add(temp.data);
-      temp = temp.next;
-    }
-  }
 }
 
 void main() {
   SLinkedList list = SLinkedList();
-  List<int> arr = [];
   list.display();
 
   list.addNode(10);
@@ -55,6 +46,4 @@ void main() {
   list.addNode(50);
 
   list.display();
-  list.LinkedtoList(arr);
-  print(arr);
 }

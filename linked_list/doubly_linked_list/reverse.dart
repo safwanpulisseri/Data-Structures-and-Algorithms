@@ -44,28 +44,6 @@ class LinkedList {
       }
     }
   }
-  // delete(int data){
-  //   if(head == null){
-  //     print('list is empty');
-  //   }else{
-  //     Node? temp = head;
-  //     while(temp != null && temp.data != data){
-  //       temp = temp.next;
-  //     }
-  //     if(temp == head){
-  //       head = head?.next;
-  //       head?.prev = null;
-  //       return;
-  //     }
-  //     if(temp == tail){
-  //       tail = tail?.prev;
-  //       tail?.next = null;
-  //       return;
-  //     }
-  //     temp?.prev?.next = temp.next;
-  //     temp?.next?.prev = temp.prev;
-  //   }
-  // }
 
   // insertAt(int findNext,int data){
   //   Node newNode = Node(data);
@@ -137,22 +115,10 @@ class LinkedList {
   //     }
   //   }
   // }
-
-  // addToList(List<int>? numbers){
-  //   if(head == null){
-  //     print("list is empty");
-  //   }else{
-  //     Node? temp = head;
-  //     while(temp!= null){
-  //       numbers?.add(temp.data!);
-  //     }
-  //   }
-  // }
 }
 
 main() {
   LinkedList list = LinkedList();
-  // List<int> numbers = [];
 
   list.display();
   list.addNode(10);
@@ -174,12 +140,6 @@ main() {
   list.display();
   // list.sortedListDel();
   // list.sortedListDelete();
-  // list.delete(20);
-  // list.display();
   // list.insertAt(30, 35);
-  // list.display();
-  // list.addToList(numbers);
-  // print(numbers);
-  // print('list backward');
   list.displayBackward();
 }
