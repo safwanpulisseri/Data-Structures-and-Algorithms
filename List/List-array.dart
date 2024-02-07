@@ -3,4 +3,7 @@ void main() {
   for (int i = arr.length - 1; i >= 0; i--) {
     print(arr[i]);
   }
+  List<dynamic> arr1 = ['Apple', 'Banana', 'Grapes'];
+  int answer = arr1.indexOf('Banana');
+  print(answer);
 }
