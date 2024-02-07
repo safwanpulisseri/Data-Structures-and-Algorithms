@@ -12,3 +12,15 @@ void main() {
   int sum = sumList(numbers);
   print('Sum of the list: $sum'); // Output: Sum of the list: 15
 }
+// void main(){
+//   List<int>list=[1,2,3,4,5];
+//   int sum=recursion(list);
+//   print(sum);
+// }
+// recursion(List<int>list,[index=0]){
+//   if(list.isEmpty){
+//     return 0;
+//   }else{
+//     return list[0]+recursion(list.sublist(index+1));
+//   }
+// }

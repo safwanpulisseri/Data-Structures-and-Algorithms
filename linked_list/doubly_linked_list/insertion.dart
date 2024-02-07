@@ -48,6 +48,21 @@ class LinkedList {
     }
     temp?.next = newNode;
   }
+  //  void insertAt(int findNext, int data) {
+  //   Node newNode = Node(data);
+  //   Node? temp = head;
+  //   while (temp != null && temp.data != findNext) {
+  //     temp = temp.next;
+  //   }
+  //   newNode.prev = temp;
+  //   newNode.next = temp?.next;
+  //   temp?.next?.prev = newNode;
+  //   temp?.next = newNode;
+  //   if (temp == tail) {
+  //     tail = newNode;
+  //   }
+
+  // }
 }
 
 main() {
