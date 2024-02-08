@@ -1,30 +1,27 @@
 class Node {
+  Node? prev;
   int data;
   Node? next;
-
   Node(this.data);
 }
 
-class SLinkedList {
+class DoublyLinkedList {
   Node? head;
   Node? tail;
-
   void addNode(int data) {
     Node newNode = Node(data);
-
     if (head == null) {
       head = newNode;
     } else {
-      tail!.next = newNode;
+      tail?.next = newNode;
+      newNode.prev = tail;
     }
     tail = newNode;
-    print('Node Added');
   }
 
   void display() {
     if (head == null) {
-      print("Empty");
-      return;
+      print('Emty list');
     }
     Node? temp = head;
     while (temp != null) {
@@ -32,13 +29,32 @@ class SLinkedList {
       temp = temp.next;
     }
   }
+
+  void delete(int value) {
+    Node? temp = head;
+    while (temp != null && temp.data != value) {
+      temp = temp.next;
+    }
+    if (temp == head) {
+      head = temp?.next;
+      head?.prev = null;
+      return;
+    }
+    if (temp == tail) {
+      tail = temp?.prev;
+      tail?.next = null;
+      return;
+    }
+    temp?.prev?.next = temp.next;
+    temp?.next?.prev = temp.prev;
+  }
 }
 
 void main() {
-  SLinkedList list = SLinkedList();
-  list.display();
+  DoublyLinkedList list = DoublyLinkedList();
   list.addNode(10);
   list.addNode(20);
-  list.addNode(50);
+  list.addNode(30);
+  list.delete(30);
   list.display();
 }
