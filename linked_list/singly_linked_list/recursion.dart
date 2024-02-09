@@ -24,11 +24,11 @@ class LinkedList {
       return;
     }
     print(temp.data);
-    display(temp.prev);
+    display(temp.next);
   }
 
   void printLinked() {
-    display(tail);
+    display(head);
   }
 }
 

@@ -60,6 +60,6 @@ void main() {
   list.addNode(39);
   list.addNode(45);
 
-  list.deletion(45);
+  list.deletion(12);
   list.display();
 }
