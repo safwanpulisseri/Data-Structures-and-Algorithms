@@ -43,8 +43,9 @@ class LinkedList {
       return;
     }
 
-    Node? newNode = temp.next!.next;
-    temp.next = newNode;
+    // Node? newNode = temp.next!.next;
+    // temp.next = newNode;
+    temp.next = temp.next?.next;
   }
 }
 
