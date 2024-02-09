@@ -3,9 +3,7 @@ class Node {
   Node? next;
 
   Node(this.data);
-//Node(int data) {
-//this.data = data;
-//}
+
 }
 
 class SLinkedList {
