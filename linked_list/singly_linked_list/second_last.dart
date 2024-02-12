@@ -32,6 +32,9 @@ class LinkedList {
     }
     return lastData;
   }
+  //   void getLast(){
+  //     print(tail?.data);
+  // }
 
   getSecondLast() {
     Node? curr = head;

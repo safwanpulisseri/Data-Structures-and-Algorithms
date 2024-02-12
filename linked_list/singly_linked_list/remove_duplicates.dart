@@ -1,27 +1,30 @@
 class Node {
-  Node? prev;
   int data;
   Node? next;
+
   Node(this.data);
 }
 
-class DoublyLinkedList {
+class SLinkedList {
   Node? head;
   Node? tail;
+
   void addNode(int data) {
     Node newNode = Node(data);
+
     if (head == null) {
       head = newNode;
     } else {
-      tail?.next = newNode;
-      newNode.prev = tail;
+      tail!.next = newNode;
     }
     tail = newNode;
+    print('Node Added');
   }
 
   void display() {
     if (head == null) {
-      print('Emty list');
+      print("Empty");
+      return;
     }
     Node? temp = head;
     while (temp != null) {
@@ -30,23 +33,6 @@ class DoublyLinkedList {
     }
   }
 
-  // void removeduplicates() {
-  //   Node? current = head;
-
-  //   while (current != null) {
-  //     Node? next = current.next;
-
-  //     while (next != null && current.data == next.data) {
-  //       next = next.next;
-  //     }
-  //     current.next = next;
-  //     if (next == tail) {
-  //       tail = current;
-  //       tail?.next = null;
-  //     }
-  //     current = next;
-  //   }
-  // }
   void removeduplicates() {
     if (head == null || head!.next == null) {
       return; // List is empty or has only one node
@@ -57,7 +43,6 @@ class DoublyLinkedList {
       Node? next = current;
       while (next!.next != null) {
         if (next.next!.data == current.data) {
-          next.next!.prev = next.prev; // Update prev reference of next node
           next.next = next.next!.next; // Remove duplicate
         } else {
           next = next.next;
@@ -70,7 +55,9 @@ class DoublyLinkedList {
 }
 
 void main() {
-  DoublyLinkedList list = DoublyLinkedList();
+  SLinkedList list = SLinkedList();
+  list.display();
+
   list.addNode(10);
   list.addNode(20);
   list.addNode(40);
@@ -84,6 +71,4 @@ void main() {
   list.addNode(20);
   list.addNode(100);
   list.removeduplicates();
-
-  //list.display();
 }
