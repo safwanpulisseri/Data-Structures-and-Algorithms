@@ -40,12 +40,12 @@ class SLinkedList {
 
     Node? current = head;
     while (current != null) {
-      Node? next = current;
-      while (next!.next != null) {
-        if (next.next!.data == current.data) {
-          next.next = next.next!.next; // Remove duplicate
+      Node? runner = current;
+      while (runner!.next != null) {
+        if (runner.next!.data == current.data) {
+          runner.next = runner.next!.next; // Remove duplicate
         } else {
-          next = next.next;
+          runner = runner.next;
         }
       }
       current = current.next;
