@@ -47,11 +47,9 @@ class HashTable {
 
 void main() {
   HashTable hashTable = HashTable(5);
-  hashTable.add('sugith', 24);
-  hashTable.add('rocky', 29);
-  hashTable.add('ram', 21);
-
-  hashTable.getAll();
+  hashTable.add('SAfwan', 20);
+  hashTable.add('Sufiyan', 29);
+  hashTable.add('SHifan', 21);
 
   hashTable.getAll();
 }

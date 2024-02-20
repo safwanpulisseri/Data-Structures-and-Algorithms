@@ -27,27 +27,24 @@ class HashTable {
     }
   }
 
-  void getAll() {
-    for (int i = 0; i < size; i++) {
-      if (table[i].data != null) {
-        Node? temp = table[i];
-        print('At index $i:');
-        while (temp != null) {
-          print('${temp.data}');
-          temp = temp.next;
-        }
-      } else {
-        print('At index $i, there is no value found.');
+  void get(String key) {
+    int index = _getIndex(key);
+    Node? temp = table[index];
+    while (temp != null) {
+      if (temp.key == key) {
+        print(temp.data);
+        return;
       }
+      temp = temp.next;
     }
+    print('Key not found.');
   }
 }
 
 void main() {
-  HashTable hashTable = HashTable(5);
-  hashTable.add('sugith', 24);
-  hashTable.add('rocky', 29);
-  hashTable.add('ram', 21);
-
-  hashTable.getAll();
+  HashTable hashTable = HashTable(4);
+  hashTable.add('Safwan', 20);
+  hashTable.add('Sufiyan', 29);
+  hashTable.add('Shifan', 21);
+  hashTable.get('Sufiyan');
 }
