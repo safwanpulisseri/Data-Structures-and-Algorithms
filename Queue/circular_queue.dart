@@ -31,6 +31,15 @@ class Queue {
       temp = temp?.next;
     } while (temp != front);
   }
+
+  peek() {
+    if (front == null) {
+      print('Empty');
+    } else {
+      print('Front element');
+      print(front?.data);
+    }
+  }
 }
 
 void main() {
@@ -42,4 +51,5 @@ void main() {
   queue.enQueue(50);
   queue.deQueue();
   queue.display();
+  queue.peek();
 }
