@@ -76,8 +76,8 @@ void main() {
   deque.enQueueRear(20);
   deque.enQueueFront(5);
   deque.enQueueRear(30);
-  deque.display(); // Output: 5, 10, 20, 30
+  deque.display();
   deque.deQueueFront();
   deque.deQueueRear();
-  deque.display(); // Output: 10, 20
+  deque.display();
 }
